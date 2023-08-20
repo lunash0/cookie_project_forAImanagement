@@ -1,26 +1,36 @@
 from django.shortcuts import render
 from django.http import HttpResponse, response
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.response import Response
-from .serializers import AccountsSerializer
-from .models import Accounts
+from rest_framework.decorators import api_view
+from rest_framework.generics import ListCreateAPIView
+from .serializers import AccountsSerializer, PetSerializer, WalkSerializer, BreedSerializer
+from .models import Accounts, Pet, Walk, Breed
+
 
 # Create your views here.
 class AccountsViewset(viewsets.ModelViewSet):
     queryset = Accounts.objects.all()
-
-'''
-class CheckAccountViewset(viewsets.ModelViewSet):
-    queryset = Accounts.objects.all()
     serializer_class = AccountsSerializer
+     
+class PetViewset(viewsets.ModelViewSet):
+    queryset = Pet.objects.all()
+    serializer_class = PetSerializer
 
-    def create(self, request):
-        checkID = post_data['checkID']
-        checkPW = post_data['checkPW']
+class WalkViewset(viewsets.ModelViewSet):
+    queryset = Walk.objects.all()
+    serializer_class = WalkSerializer
 
-        if Accounts.objects.filter(identify=checkID).exists():
-            if Accounts.objects.filter(password=checkPW).exists():
-                return Response(status=200)
+class BreedViewset(viewsets.ModelViewSet):
+    queryset = Breed.objects.all()
+    serializer_class = BreedSerializer
 
-        return Response(status=400)
 '''
+@api_view(['POST'])
+def create_pet_info(request):
+    serializer = PetSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    '''

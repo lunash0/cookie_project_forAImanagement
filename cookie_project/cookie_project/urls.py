@@ -20,6 +20,9 @@ from cookie import views
 
 router = routers.DefaultRouter()
 router.register('cookie', views.AccountsViewset)
+router.register('pet', views.PetViewset)
+router.register('walk', views.WalkViewset)
+router.register('breed', views.BreedViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
