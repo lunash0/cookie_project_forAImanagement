@@ -22,7 +22,8 @@ def read_login_info(request):
 
         if search_user.exists():
             response_data = {'message': '로그인 성공'}
+            return JsonResponse(response_data)
         else:
             response_data = {'message': '로그인 실패'}
-
-        return JsonResponse(response_data)
+            return 0
+        
