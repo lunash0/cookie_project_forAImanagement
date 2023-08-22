@@ -14,4 +14,6 @@ urlpatterns = [
     path('photo_upload/', photo.upload_and_display_photo, name='upload_and_display_photo'),
     # path('dog_info/', views.create_dog_info, name='create_dog_info'),
     # path('pet_info/', CreatePetInfo.as_view(), name="create_pet_info"),
+    
+    # path('send_image/', views.process_image, name='send_image'),
 ]

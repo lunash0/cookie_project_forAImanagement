@@ -26,15 +26,16 @@ class Pet(models.Model):
     WALK_TIME = models.CharField(max_length=50, null=True)
     WALK_PLACE = models.ForeignKey(Walk, on_delete=models.CASCADE, null=True)
 
-    '''
+
+'''
     PET_ID = models.AutoField(primary_key=True)
-    PET_NAME = models.CharField(max_length=50)
-    PET_GENDER = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    PET_NEUTER = models.CharField(max_length=1, choices=YES_NO_CHOICES)
-    PET_BIRTH = models.DateField()
-    PET_BREED = models.ForeignKey(Breed, on_delete=models.CASCADE)
-    WALK_TIME = models.CharField(max_length=50)
-    WALK_PLACE = models.ForeignKey(Walk, on_delete=models.CASCADE)
+    PET_NAME = models.CharField(max_length=50, null=True)
+    PET_GENDER = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True)
+    PET_NEUTER = models.CharField(max_length=1, choices=YES_NO_CHOICES, null=True)
+    PET_BIRTH = models.DateField(null=True)
+    PET_BREED = models.ForeignKey(Breed, on_delete=models.CASCADE, null=True)
+    WALK_TIME = models.CharField(max_length=50, null=True)
+    WALK_PLACE = models.ForeignKey(Walk, on_delete=models.CASCADE, null=True)
 '''
 
 class SkinInfo(models.Model):
