@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'cookie',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -78,12 +79,12 @@ WSGI_APPLICATION = 'cookie_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # ÏÇ¨Ïö©Ìï† DBÏùò Ï¢ÖÎ•ò
-        'NAME': 'cookie',    # DB Ïù¥Î¶Ñ
-        'USER': 'dohoon',       # DB Í≥ÑÏ†ï Ïù¥Î¶Ñ
-        'PASSWORD': 'dohoon', # DB Í≥ÑÏ†ïÏùò Ìå®Ïä§ÏõåÎìú
+        'ENGINE': 'django.db.backends.mysql', # ?Ç¨?ö©?ï† DB?ùò Ï¢ÖÎ•ò
+        'NAME': 'cookie',    # DB ?ù¥Î¶?
+        'USER': 'dohoon',       # DB Í≥ÑÏ†ï ?ù¥Î¶?
+        'PASSWORD': 'dohoon', # DB Í≥ÑÏ†ï?ùò ?å®?ä§?õå?ìú
         'HOST': 'localhost',    # IP
-        'PORT': '3306',         # Ìè¨Ìä∏ Î≤àÌò∏
+        'PORT': '3306',         # ?è¨?ä∏ Î≤àÌò∏
     }
 }
 
@@ -131,5 +132,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'cookie/media'))

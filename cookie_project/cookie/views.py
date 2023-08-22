@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse, response
+from django.http import HttpResponse, response, JsonResponse
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView
 from .serializers import AccountsSerializer, PetSerializer, WalkSerializer, BreedSerializer
 from .models import Accounts, Pet, Walk, Breed
-
 
 # Create your views here.
 class AccountsViewset(viewsets.ModelViewSet):
